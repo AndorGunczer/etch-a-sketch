@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 36em;
+    width: 36em;
+    border: 1px solid black;
+}
+
+.draw_grid {
+    box-sizing: border-box;
+    height: 6em;
+    width: 6em;
+    border: 1px solid black;
+}
