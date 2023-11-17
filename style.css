@@ -6,6 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 6em;
 }
 
 .container {
@@ -21,4 +22,17 @@ body {
     height: 6em;
     width: 6em;
     border: 1px solid black;
+}
+
+.ui {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6em;
+}
+
+#eraser, #color {
+    width: 10em;
+    height: 3em;
 }
