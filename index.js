@@ -12,29 +12,29 @@ const grid = document.querySelectorAll('.draw_grid');
 const eraser = document.getElementById('eraser');
 const color = document.getElementById('color');
 
-eraser.addEventListener('click', draw.bind(null, "white"));
-color.addEventListener('click', draw.bind(null, "red"));
+eraser.addEventListener('click', erase);
+color.addEventListener('click', draw);
 
-function colorFunctionCaller() {
-    // colorFunction()
-}
-
-function colorFunction(element, color) {
-    console.log(element);
-    element.setAttribute('style', "background-color: " + color + ";");
+function colorFunction() {
+    console.log("drawer called");
+    this.setAttribute('style', "background-color: " + "red" + ";");
 };
 
-function draw(color) {
+function eraseFunction() {
+    console.log("eraser called");
+    this.setAttribute('style', "background-color: " + "white" + ";");
+}
+
+function draw() {
     grid.forEach(element => {
-        element.removeEventListener('mouseover', colorFunction.bind(null, element, color));
-        element.addEventListener('mouseover', colorFunction.bind(null, element, color));
+        element.removeEventListener('mouseover', eraseFunction);
+        element.addEventListener('mouseover', colorFunction);
     });
 };
 
-// function draw(color) {
-//     grid.forEach(element => {
-//         element.addEventListener('mouseover', () => {
-//             element.setAttribute('style', "background-color: red;");
-//         });
-//     });
-// };
+function erase() {
+    grid.forEach(element => {
+        element.removeEventListener("mouseover", colorFunction);
+        element.addEventListener("mouseover", eraseFunction);
+    })
+}
