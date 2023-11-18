@@ -7,19 +7,19 @@ let square_size = 32 / square_per_row;
 
 create_grid();
 
-slider.onchange = () => {
+slider.oninput = () => {
 
     const draw_grid = Array.from(document.getElementsByClassName('draw_grid'));
-    let x = 0;
     slider_value = slider.value;
     square_per_row = slider_value / 2;
     square_per_column = square_per_row;
     square_size = 32 / square_per_row;
 
-    // console.log(slider.value);
-    // console.log(square_per_column);
-    // console.log(square_size);
-    // console.log(draw_grid);
+    console.log(slider.value);
+    console.log(square_per_column);
+    console.log(square_per_row);
+    console.log(square_size);
+    console.log(draw_grid);
     
     remove_grid(draw_grid);
     create_grid();
