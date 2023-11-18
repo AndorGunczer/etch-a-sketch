@@ -4,9 +4,45 @@ html, body {
 
 body {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+h1 {
+    margin: 0.5em 0 0 0;
+    padding-bottom: 0.2em;
+    padding-top: 0.4em;
+    font-size: 4em;
+}
+
+button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5%/10%;
+}
+
+button:hover {
+    background-color: #DCDCDC;
+}
+
+button:active {
+    background-color: #F3F3F3;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.root_container {
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6em;
+    padding: 2em 2em 2em 2em;
+    /* gap: 12em; */
+    border: 1px solid black;
+    border-radius: 4%/5%;
+    background-color: #F3F3F3;
 }
 
 .container {
@@ -15,6 +51,7 @@ body {
     height: 32em;
     width: 32em;
     border: 1px solid black;
+    background-color: white;
 }
 
 .draw_grid {
@@ -30,6 +67,22 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 6em;
+    margin: auto 4em auto 2em;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 4em;
+    width: 100%;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
 }
 
 #eraser, #color {

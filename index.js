@@ -16,20 +16,24 @@ slider.onchange = () => {
     square_per_column = square_per_row;
     square_size = 32 / square_per_row;
 
-    console.log(slider.value);
-    console.log(square_per_column);
-    console.log(square_size);
-    console.log(draw_grid);
+    // console.log(slider.value);
+    // console.log(square_per_column);
+    // console.log(square_size);
+    // console.log(draw_grid);
     
     remove_grid(draw_grid);
     create_grid();
 };
 
+/*
+    Functions to switch between different grid modes
+*/
+
 const eraser = document.getElementById('eraser');
 const color = document.getElementById('color');
 
-eraser.addEventListener('click', erase);
-color.addEventListener('click', draw);
+eraser.addEventListener('click', erase_mode);
+color.addEventListener('click', draw_mode);
 
 function colorFunction() {
     console.log("drawer called");
@@ -41,7 +45,7 @@ function eraseFunction() {
     this.setAttribute('style', `height: ${square_size}em; width: ${square_size}em; background-color: white;`);
 };
 
-function draw() {
+function draw_mode() {
     const grid = document.querySelectorAll('.draw_grid');
 
     grid.forEach(element => {
@@ -50,7 +54,7 @@ function draw() {
     });
 };
 
-function erase() {
+function erase_mode() {
     const grid = document.querySelectorAll('.draw_grid');
 
     grid.forEach(element => {
@@ -58,6 +62,10 @@ function erase() {
         element.addEventListener("mouseover", eraseFunction);
     });
 };
+
+/*
+    Functions to work with the grid
+*/
 
 function create_grid() {
     for (let i = 0; i < square_per_column; i++) {
